@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Git Undo Things</title>
+  <meta name="description" content="">
+
+  <link rel="icon" type="image/png" href="/images/billi66.png">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="/git-undo-things.html">
+</head>
+
+  <body>
+    <header class="site-header">
+  <div class="wrapper">
+    <a class="site-title" href="/">111Billie Homepage111</a>
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+      <div class="trigger">
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+  </div>
+</header>
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+  <header class="post-header">
+    <h1 class="post-title">Git Undo Things</h1>
+    <p class="post-meta">
+      Nov 22, 2010
+    </p>
+  </header>
+  <article class="post-content">
+    <p>Last night, I messed up my blog repository which including a useless file. I
+really wanted to delete the last commit, So I googled to find a git command to
+settle this problem. Though google I not only removed the bad commit, but also
+I learned several basic git commands to undo changes that you’d made.</p>
+
+<p>There is a saying that an old pencil is better than a good brain. This was the
+second time I met the problem again and I did not want to spend time on it, so
+I took a note of it in case of forgetting the method.</p>
+
+<p>Now, I will use an example to explain how to use these basic tools for undoing
+something.</p>
+
+<h3 id="create-a-repo">create a repo</h3>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git init
+Initialized empty Git repository in /home/billie/test/.git/</code></pre></div>
+
+<h3 id="discard-changes-in-working-directory">discard changes in working directory</h3>
+
+<p>If you want to discard all changes on the file named cat, you can 
+use <a href="http://www.kernel.org/pub/software/scm/git/docs/git-checkout.html"><em>git checkout</em></a>,
+for example:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git checkout -- cat</code></pre></div>
+
+<p>If you want to keep the same content with the last commit, undo everything that 
+you have made recently in working tree. You can use <a href="http://www.kernel.org/pub/software/scm/git/docs/git-reset.html"><em>git reset</em></a>.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git reset --hard HEAD</code></pre></div>
+
+<h3 id="delete-the-last-commit">delete the last commit</h3>
+
+<p>If you commited some stuff, but you realize that you did something wrong and
+want to delete the last commit. How to settle this? Use <em>git reset</em> again.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git reset --hard HEAD~1</code></pre></div>
+
+<p><em>HEAD~1</em> is a shorthand for the commit before head. If you want to keep all
+the changes but delete the commit, you can use <code>--soft</code> option instead of
+<code>--hard</code>.</p>
+
+<p>Note: If you already pushed a repo and someone pulled it, then you cann’t delete the
+bad commit. So you can use <a href="http://www.kernel.org/pub/software/scm/git/docs/git-revert.html"><em>git revert</em></a> to fix up your mistakes. <em>git revert</em>
+will create a new commit that revert an exsiting commit.</p>
+
+<p>The following example will show you how to use <em>git revert</em> to revert the most
+recent commit.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git revert HEAD^1</code></pre></div>
+
+<p>There is a good book about git:</p>
+
+<p><a href="http://book.git-scm.com/">Pro Git</a></p>
+
+
+  </article>
+</div>
+
+<!-- disqus begin -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://bilihome.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<!-- disqus end -->
+
+      </div>
+    </div>
+  </body>
+</html>
