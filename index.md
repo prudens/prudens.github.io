@@ -14,7 +14,7 @@ custom_css: true
 <p><br /><b>我的项目</b></p>
 <ul class="posts mylist">
   <li class="list_item"><a href="https://github.com/prudens">Github</a></li>
-  <!--<li class="list_item"><a href="#">Book</a></li> -->
+  <li class="list_item"><a href="/personalresume.html">关于我</a></li>
 </ul>
 
 
