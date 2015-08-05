@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 我的简历
-author: prudens
+author: 张乃淦
 ---
 ********************      
 
@@ -40,9 +40,7 @@ author: prudens
 
 ###日常使用的技能清单    
 * 语言：
-    C/C++
-	汇编
-	python   
+    C/C++ 
 * 框架：
 	DirectUI（duilib）
 	gtest
@@ -61,6 +59,13 @@ author: prudens
     linux shell    
 * 博客：
     [http://prudens.github.io](http://prudens.github.io)	
+
+********************
+
+###自我介绍
+本人一直在从事C++软件开发工s作，对C++语言，STL,BOOST库，比较熟悉，熟悉TCP协议等网络编程基础，
+有数据库基础，熟悉sqlite。擅长GUI开发，多线程，跨进程通信，性能调优，同时有过短暂的Linux服务器开发经验，
+现寻求一份比较有挑战性的高级C++开发职位，不限于windows和Linux，windows可以胜任整个开发框架级构建，Linux胜任模块级开发工作。
 
 ********************      
 
